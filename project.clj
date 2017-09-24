@@ -11,7 +11,7 @@
   :plugins [[lein-clr "0.2.1"]]
   :clr {:cmd-templates  {:clj-exe   [[?PATH "mono"] [CLJCLR19_40 %1]]
                          :clj-dep   [[?PATH "mono"] ["target/clr/clj/Debug 4.0" %1]]
-                         :clj-url   "https://github.com/downloads/clojure/clojure-clr/clojure-clr-1.4.0-Debug-4.0.zip""
+                         :clj-url   "https://github.com/downloads/clojure/clojure-clr/clojure-clr-1.4.0-Debug-4.0.zip"
                          :clj-zip   "clojure-clr-1.4.1-Debug-4.0.zip"
                          :curl      ["curl" "--insecure" "-f" "-L" "-o" %1 %2]
                          :nuget-ver [[?PATH "mono"] [*PATH "nuget.exe"] "install" %1 "-Version" %2]
