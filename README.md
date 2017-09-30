@@ -16,7 +16,7 @@ Nuget reference:
 
 Leiningen/Clojars reference:
 
-   [org.clojure.clr/spec.alpha "0.1.0"]
+   [org.clojure.clr/spec.alpha "0.1.94"]
    
 ## Notes on the ported code ##
 
