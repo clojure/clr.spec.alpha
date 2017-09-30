@@ -1,4 +1,4 @@
-(defproject clr.spec.alpha "0.1.0-SNAPSHOT"
+(defproject clr.spec.alpha "0.1.94-SNAPSHOT"
   :description "Port of clojure.org/spec.alpha to ClojureCLR"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
