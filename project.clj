@@ -1,6 +1,6 @@
 (defproject clr.spec.alpha "0.1.94-SNAPSHOT"
   :description "Port of clojure.org/spec.alpha to ClojureCLR"
-  :url "http://example.com/FIXME"
+  :url "https://github.com/clojure/clr.spec.alpha"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies []
