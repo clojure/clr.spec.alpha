@@ -1,7 +1,7 @@
 (ns clojure.test-clojure.spec
   (:require [clojure.spec.alpha :as s]
-            [clojure.spec.alpha.gen :as gen]
-            [clojure.spec.alpha.test :as stest]
+            [clojure.spec.gen.alpha :as gen]
+            [clojure.spec.test.alpha :as stest]
             [clojure.test :refer :all]))
 
 (set! *warn-on-reflection* true)
