@@ -152,7 +152,7 @@ gens, each of which should generate something sequential."
       qualified-symbol? (such-that qualified? (symbol-ns))
       uuid? (uuid)
 	  uri? (fmap #(System.Uri. (str "http://" % ".com")) (uuid))              ;;; java.net.URI/create 
-      bigdec? (fmap #(BigDecimal/Create ^double %)                            ;;; BigDecimal/valueOf
+      decimal? (fmap #(BigDecimal/Create ^double %)                           ;;; BigDecimal/valueOf
                     (double* {:infinite? false :NaN? false}))
       inst? (fmap #(System.DateTime. %)                                       ;;; java.util.Date. 
                   (large-integer))
