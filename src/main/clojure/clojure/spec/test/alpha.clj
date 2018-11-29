@@ -124,7 +124,8 @@ failure in instrument."
                                          stacktrace-relevant-to-instrument
                                          first)
                              ed (merge (assoc (s/explain-data* spec [role] [] [] data)
-                                         ::s/args args
+                                         ::s/fn (->sym v)
+										 ::s/args args
                                          ::s/failure :instrument)
                                        (when caller
                                          {::caller (dissoc caller :class :method)}))]
