@@ -121,6 +121,15 @@
 (defprotocol Specize
   (specize* [_] [_ form]))
 
+  
+  #"(.*)\$(.*)fn(__[0-9]+)+$"
+  #"(.*)\$(.*?)(__[0-9]+)?"
+(defn- fn-sym [^Object f]              ;;; Had to seriously hack this to handle things like  user$eval_2030fn_2131_2132
+   (let [[_ f-ns f-n] (re-matches #"(.*)\$(.*?)(__[0-9]+)?" (.. f GetType FullName))]           ;;; getClass getName
+      ;; check for anonymous function
+      (when (not (re-matches #"(.*)\$(.*)fn(__[0-9]+)+$" (.. f GetType FullName)))              ;;;  (not= "fn" f-n)
+        (symbol (clojure.lang.Compiler/demunge f-ns) (clojure.lang.Compiler/demunge f-n)))))
+	  
 (extend-protocol Specize
   clojure.lang.Keyword
   (specize* ([k] (specize* (reg-resolve! k)))
@@ -130,8 +139,16 @@
   (specize* ([s] (specize* (reg-resolve! s)))
             ([s _] (specize* (reg-resolve! s))))
 
+  clojure.lang.IPersistentSet
+  (specize* ([s] (spec-impl s s nil nil))
+            ([s form] (spec-impl form s nil nil)))
+
   Object
-  (specize* ([o] (spec-impl ::unknown o nil nil))
+  (specize* ([o] (if (c/and (not (map? o)) (ifn? o))
+                   (if-let [s (fn-sym o)]
+                     (spec-impl s o nil nil)
+                     (spec-impl ::unknown o nil nil))
+                   (spec-impl ::unknown o nil nil)))
             ([o form] (spec-impl form o nil nil))))
 
 (defn- specize

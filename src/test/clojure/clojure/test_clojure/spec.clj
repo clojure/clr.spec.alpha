@@ -67,8 +67,8 @@
       ;; drange Double/NaN ::s/invalid {[] {:pred '(clojure.core/fn [%] (clojure.core/not (Double/isNaN %))), :val Double/NaN}}
 
       keyword? :k :k nil
-      keyword? nil ::s/invalid [{:pred ::s/unknown :val nil}]
-      keyword? "abc" ::s/invalid [{:pred ::s/unknown :val "abc"}]
+      keyword? nil ::s/invalid [{:pred `keyword? :val nil}]
+      keyword? "abc" ::s/invalid [{:pred `keyword? :val "abc"}]
 
       a 6 6 nil
       a 3 ::s/invalid '[{:pred (clojure.core/fn [%] (clojure.core/> % 5)), :val 3}]
