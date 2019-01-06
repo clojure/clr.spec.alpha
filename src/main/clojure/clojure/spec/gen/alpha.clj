@@ -8,14 +8,14 @@
 
 (ns clojure.spec.gen.alpha
     (:refer-clojure :exclude [boolean bytes cat hash-map list map not-empty set vector
-                              char double int keyword symbol string uuid delay]))
+                              char double int keyword symbol string uuid delay shuffle]))
 
 (alias 'c 'clojure.core)
 
 (defn- dynaload
   [s]
   (let [ns (namespace s)]
-    (assert ns)
+    (assert ns)    (assembly-load-from "clojure.test.check.dll")                            ;;; Added the assembly-load-from -- just in case we are running in context where this has not yet been loaded.
     (require (c/symbol ns))
     (let [v (resolve s)]
       (if v
@@ -91,7 +91,7 @@
 
 (lazy-combinators hash-map list map not-empty set vector vector-distinct fmap elements
                   bind choose fmap one-of such-that tuple sample return
-                  large-integer* double* frequency)
+                  large-integer* double* frequency shuffle)
 
 (defmacro ^:skip-wiki lazy-prim
   "Implementation macro, do not call directly."
@@ -155,7 +155,7 @@ gens, each of which should generate something sequential."
       decimal? (fmap #(BigDecimal/Create ^double %)                           ;;; BigDecimal/valueOf
                     (double* {:infinite? false :NaN? false}))
       inst? (fmap #(System.DateTime. %)                                       ;;; java.util.Date. 
-                  (large-integer))
+                  (large-integer* {:min 0 :max (.Ticks (System.DateTime/MaxValue))}))                                            ;;; (large-integer)
       seqable? (one-of [(return nil)
                         (list simple)
                         (vector simple)
@@ -202,7 +202,7 @@ gens, each of which should generate something sequential."
               :b (gen-for-pred ratio?)}
         opts {:c (gen-for-pred string?)}]
     (generate (bind (choose 0 (count opts))
-                    #(let [args (concat (seq reqs) (shuffle (seq opts)))]
+                    #(let [args (concat (seq reqs) (c/shuffle (seq opts)))]
                        (->> args
                             (take (+ % (count reqs)))
                             (mapcat identity)
