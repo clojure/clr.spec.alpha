@@ -12,11 +12,14 @@
 
 (alias 'c 'clojure.core)
 
+(defonce ^:private dynalock (Object.))
+
 (defn- dynaload
   [s]
   (let [ns (namespace s)]
     (assert ns)    (assembly-load-from "clojure.test.check.dll")                            ;;; Added the assembly-load-from -- just in case we are running in context where this has not yet been loaded.
-    (require (c/symbol ns))
+    (locking dynalock
+      (require (c/symbol ns)))
     (let [v (resolve s)]
       (if v
         @v

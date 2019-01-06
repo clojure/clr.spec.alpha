@@ -259,7 +259,7 @@
   (s/def ::c keyword?)
   (s/def ::d double?)
   (s/def ::e inst?)   
-(stupidity)(stupidity)
+
   (is (= #{[::a]
            [::a ::b]
            [::a ::b ::c]
