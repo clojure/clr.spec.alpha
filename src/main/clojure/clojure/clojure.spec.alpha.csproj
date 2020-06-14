@@ -1,10 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net35</TargetFramework>
+    <TargetFrameworks>net461;netstandard2.1</TargetFrameworks>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
   </PropertyGroup>
+  <PropertyGroup>
+    <Title>clojure.spec.alpha</Title>
+    <Product>clojure.spec.alpha</Product>
+    <AssemblyTitle>clojure.spec.alpha</AssemblyTitle>
+    <Description>Port of clojure.spec.alpha to ClojureCLR</Description>
+    <Copyright>Copyright © Rich Hickey, David Miller 2020</Copyright>
+    <Company>ClojureCLR contributors</Company>
+    <Version>0.1.176</Version>
+  </PropertyGroup>  
   <PropertyGroup>
     <RootNamespace>clojure</RootNamespace>
   </PropertyGroup>
