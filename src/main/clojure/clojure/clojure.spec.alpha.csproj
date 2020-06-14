@@ -12,7 +12,7 @@
     <Description>Port of clojure.spec.alpha to ClojureCLR</Description>
     <Copyright>Copyright © Rich Hickey, David Miller 2020</Copyright>
     <Company>ClojureCLR contributors</Company>
-    <Version>0.1.176</Version>
+    <Version>0.1.187</Version>
   </PropertyGroup>  
   <PropertyGroup>
     <RootNamespace>clojure</RootNamespace>
@@ -21,6 +21,9 @@
     <EmbeddedResource Include="spec\alpha.clj" />
     <EmbeddedResource Include="spec\gen\alpha.clj" />
     <EmbeddedResource Include="spec\test\alpha.clj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
