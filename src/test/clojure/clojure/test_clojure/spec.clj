@@ -253,7 +253,7 @@
 (stupidity)
   
 ;; TODO replace this with a generative test once we have specs for s/keys
-(deftest map-spec-generators
+#_(deftest map-spec-generators
   (s/def ::a nat-int?)
   (s/def ::b boolean?)
   (s/def ::c keyword?)
