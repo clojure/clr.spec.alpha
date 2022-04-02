@@ -14,25 +14,11 @@
 
 (defonce ^:private dynalock (Object.))
 
-(defmacro ^:private locking2
-  "Executes exprs in an implicit do, while holding the monitor of x.
-  Will release the monitor of x in all circumstances."
-  {:added "1.0"}
-  [x & body]
-  `(let [lockee# ~x]
-     (try
-       (let [locklocal# lockee#]
-         (monitor-enter locklocal#)
-         (try
-           ~@body
-           (finally
-            (monitor-exit locklocal#)))))))
-
 (defn- dynaload
   [s]
   (let [ns (namespace s)]
-    (assert ns)    (assembly-load-from "clojure.test.check.dll")                            ;;; Added the assembly-load-from -- just in case we are running in context where this has not yet been loaded.
-    (locking2  dynalock
+    (assert ns)
+    (locking dynalock
       (require (c/symbol ns)))
     (let [v (resolve s)]
       (if v
