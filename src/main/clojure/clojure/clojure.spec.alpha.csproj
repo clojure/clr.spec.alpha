@@ -10,7 +10,7 @@
     <Product>clojure.spec.alpha</Product>
     <AssemblyTitle>clojure.spec.alpha</AssemblyTitle>
     <Description>Port of clojure.spec.alpha to ClojureCLR</Description>
-    <Copyright>Copyright © Rich Hickey, David Miller 2021</Copyright>
+    <Copyright>Copyright © Rich Hickey, David Miller 2022</Copyright>
     <Company>ClojureCLR contributors</Company>
     <Version>0.2.194</Version>
   </PropertyGroup>  
