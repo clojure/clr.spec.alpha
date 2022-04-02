@@ -245,6 +245,9 @@
   (is (nil? (s/get-spec ::ABC))))
 
 ;;;  CRAP added to get around lazy loading stupidity that I can't figure out.  Need to call it twice!!!!   TODO:  Someday figure out why this is such a failure
+;;;  Someday -- I've partially tracked this down.  in gen/spec-for-pred, there is a lookup in a map of basic predicates, keyed on the function, such as nat-int?.
+;;;  It appears that at some point in the loading, the values of nat-int?, string?, etc. change and the lookup no longer works.
+;;;  For some reason, this trick seems to solve it.  I have no idea why.  Still need to track it down.
 (defn stupidity []
    (s/def ::q nat-int?)
    (try (s/exercise (s/keys :req [::q])) (catch Exception e nil)))
@@ -253,7 +256,7 @@
 (stupidity)
   
 ;; TODO replace this with a generative test once we have specs for s/keys
-#_(deftest map-spec-generators
+(deftest map-spec-generators
   (s/def ::a nat-int?)
   (s/def ::b boolean?)
   (s/def ::c keyword?)
