@@ -3,7 +3,7 @@
   :url "https://github.com/clojure/clr.spec.alpha"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure.clr/test.check "1.1.1"]]
+  :dependencies [[org.clojure.clr/test.check "1.1.2"]]
   :deploy-repositories [["clojars" {:url "https://clojars.org/repo/"
                                     :sign-releases  false}]]
   :warn-on-reflection true
