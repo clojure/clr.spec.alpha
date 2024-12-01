@@ -6,7 +6,7 @@
 ;   the terms of this license.
 ;   You must not remove this notice, or any other, from this software.
 
-(ns clojure.test-clojure.spec
+(ns clojure.test-clojure.spec-test                                      ;;; renamed as spec-test for test-runner compat
   (:require [clojure.spec.alpha :as s]
             [clojure.spec.gen.alpha :as gen]
             [clojure.spec.test.alpha :as stest]
@@ -128,7 +128,7 @@
       andre nil nil nil
       andre [] nil nil
       andre :k :clojure.spec.alpha/invalid '[{:pred (clojure.core/fn [%] (clojure.core/or (clojure.core/nil? %) (clojure.core/sequential? %))), :val :k}]
-      andre [:k] ::s/invalid '[{:pred clojure.test-clojure.spec/even-count?, :val [:k]}]
+      andre [:k] ::s/invalid '[{:pred clojure.test-clojure.spec-test/even-count?, :val [:k]}]                                                                      ;;; renamed to match new namespace
       andre [:j :k] [:j :k] nil
 
       andre2 nil :clojure.spec.alpha/invalid [{:pred #{[:a]}, :val []}]
@@ -317,7 +317,7 @@
 
 (comment
   (require '[clojure.test :refer (run-tests)])
-  (in-ns 'clojure.test-clojure.spec)
+  (in-ns 'clojure.test-clojure.spec-test)                           ;;; ;;; renamed as spec-test for test-runner compat
   (run-tests)
 
   )

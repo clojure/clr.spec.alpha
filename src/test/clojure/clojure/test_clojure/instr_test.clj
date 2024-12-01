@@ -6,7 +6,7 @@
 ;   the terms of this license.
 ;   You must not remove this notice, or any other, from this software.
 
-(ns clojure.test-clojure.instr
+(ns clojure.test-clojure.instr-test                     ;;; ;;; renamed as instr-test for test-runner compat
   (:require [clojure.spec.alpha :as s]
             [clojure.spec.gen.alpha :as gen]
             [clojure.spec.test.alpha :as stest]

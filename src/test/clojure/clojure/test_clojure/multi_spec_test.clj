@@ -6,10 +6,10 @@
 ;   the terms of this license.
 ;   You must not remove this notice, or any other, from this software.
 
-(ns clojure.test-clojure.multi-spec
+(ns clojure.test-clojure.multi-spec-test                          ;;; renamed as multi-spec-test for test-runner compat
   (:require [clojure.spec.alpha :as s]
             [clojure.test :as test :refer [deftest is testing]]
-            [clojure.test-clojure.spec :refer [submap?]]))
+            [clojure.test-clojure.spec-test :refer [submap?]]))
 
 (s/def :event/type keyword?)
 (s/def :event/timestamp int?)
@@ -38,7 +38,7 @@
   (is (submap?
         '#:clojure.spec.alpha{:problems
                               [{:path [:event/restart],
-                                :pred clojure.test-clojure.multi-spec/event-type,
+                                :pred clojure.test-clojure.multi-spec-test/event-type,                                       ;; changed namespace
                                 :val #:event{:type :event/restart}, :reason "no method", :via [:event/event], :in []}],
                               :spec :event/event, :value #:event{:type :event/restart}}
         (s/explain-data :event/event

@@ -131,7 +131,7 @@ failure in instrument."
         conform! (fn [fn-name role spec data args]
                    (let [conformed (s/conform spec data)]
                      (if (= ::s/invalid conformed)
-                       (let [caller (->> (System.Diagnostics.StackTrace. true)                               ;;; (.getStackTrace (Thread/currentThread))
+                       (let [caller (->> (.GetFrames (System.Diagnostics.StackTrace. true))                ;;; (.getStackTrace (Thread/currentThread))
                                          stacktrace-relevant-to-instrument
                                          first)
                              ed (merge (assoc (s/explain-data* spec [] [] [] data)
