@@ -12,22 +12,20 @@ From the parent's README:
 
 Latest stable release: 0.5.238
 
+[deps.edn](https://clojure.org/guides/deps_edn) dependency information:
+
+	org.clojure/spec.alpha {:git/tag "v0.5.238"  :git/sha "1cfe4af"}
+
 Nuget reference:
 
-    PM> Install-Package clojure.spec.alpha -Version 0.3.218
+    PM> Install-Package clojure.spec.alpha -Version 0.5.238
 
-Leiningen/Clojars reference:
 
-   [org.clojure.clr/spec.alpha "0.3.218"]
+[Leiningen/Clojars](https://github.com/technomancy/leiningen) dependency information:
+
+   [org.clojure.clr/spec.alpha "0.5.238"]
    
-## Notes on the ported code ##
-
-We are working through a large number of updates that have been made to the original code.
-
-## Usage
-
-
 
 # Copyright and License #
 
-> Copyright (c) Rich Hickey, and contributors, 2017. All rights reserved.  The use and distribution terms for this software are covered by the Eclipse Public License 1.0 (http://opensource.org/licenses/eclipse-1.0.php) which can be found in the file epl-v10.html at the root of this distribution. By using this software in any fashion, you are agreeing to be bound bythe terms of this license.  You must not remove this notice, or any other, from this software.
+> Copyright (c) Rich Hickey, and contributors, 2018-2023. All rights reserved. The use and distribution terms for this software are covered by the Eclipse Public License 1.0 (https://opensource.org/licenses/eclipse-1.0.php) which can be found in the file epl-v10.html at the root of this distribution. By using this software in any fashion, you are agreeing to be bound bythe terms of this license. You must not remove this notice, or any other, from this software.
