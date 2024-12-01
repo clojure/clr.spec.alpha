@@ -19,14 +19,14 @@
 		<RepositoryUrl>https://github.com/clojure/clr.spec.alpha</RepositoryUrl>
 		<Company>ClojureCLR contributors</Company>
 		<PackageTags>Clojure;ClojureCLR</PackageTags>
-		<Version>0.3.218</Version>
+		<Version>0.5.238</Version>
 	</PropertyGroup> 
 
   <ItemGroup>
     <EmbeddedResource Include="..\..\clojure\clojure\spec\**\*" />
   </ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="clojure.test.check" Version="1.1.1" />
+		<PackageReference Include="clojure.test.check" Version="1.1.2" />
 	</ItemGroup>
 
 </Project>

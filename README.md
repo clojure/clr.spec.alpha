@@ -6,9 +6,11 @@ From the parent's README:
 
 > spec is a Clojure library to describe the structure of data and functions. Specs can be used to validate data, conform (destructure) data, explain invalid data, generate examples that conform to the specs, and automatically use generative testing to test functions.
 
->Clojure 1.9 (still in alpha releases) depends on this library and provides it to users of Clojure. Thus, the recommended way to use this library is to add a dependency on the latest version of Clojure 1.9, rather than including it directly. In some cases, this library may release more frequently than Clojure. In those cases, you can explictly include the latest version of this library with the dependency info below.
+> NOTE: This library is alpha and subject to breaking changes. At a future point, there will be a non-alpha stable version of this library.
 
 # Releases
+
+Latest stable release: 0.5.238
 
 Nuget reference:
 
