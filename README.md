@@ -14,7 +14,7 @@ Latest stable release: 0.5.238
 
 [deps.edn](https://clojure.org/guides/deps_edn) dependency information:
 
-	io.github.clojure/clr/spec.alpha {:git/tag "v0.5.238"  :git/sha "1cfe4af"}
+	io.github.clojure/clr.spec.alpha {:git/tag "v0.5.238"  :git/sha "1cfe4af"}
 
 Nuget reference:
 
