@@ -19,7 +19,7 @@
 		<RepositoryUrl>https://github.com/clojure/clr.spec.alpha</RepositoryUrl>
 		<Company>ClojureCLR contributors</Company>
 		<PackageTags>Clojure;ClojureCLR</PackageTags>
-		<Version>0.5.238</Version>
+		<Version>0.6.249</Version>
 	</PropertyGroup> 
 
   <ItemGroup>
