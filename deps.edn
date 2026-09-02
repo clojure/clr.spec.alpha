@@ -1,6 +1,6 @@
 {:paths ["src/main/clojure"]
  :deps
-   {io.github.clojure/clr.test.check {:git/tag "v1.1.4-beta1"  :git/sha "8d9e5ef"}}
+   {io.github.clojure/clr.test.check {:git/tag "v1.1.4-beta2"  :git/sha "3b4145b"}}
 
  :aliases
  {:test
