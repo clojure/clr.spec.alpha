@@ -10,20 +10,20 @@ From the parent's README:
 
 # Releases
 
-Latest stable release: 0.6.249
+Latest stable release: 0.6.250
 
 [deps.edn](https://clojure.org/guides/deps_edn) dependency information:
 
-	io.github.clojure/clr.spec.alpha {:git/tag "v0.6.249"  :git/sha "a504b93"}
+	io.github.clojure/clr.spec.alpha {:git/tag "v0.6.250"  :git/sha "56a395b"}
 
 Nuget reference:
 
-    PM> Install-Package clojure.spec.alpha -Version 0.6.249
+    PM> Install-Package clojure.spec.alpha -Version 0.6.250
 
 
 [Leiningen/Clojars](https://github.com/technomancy/leiningen) dependency information:
 
-   [org.clojure.clr/spec.alpha "0.6.249"]
+   [org.clojure.clr/spec.alpha "0.6.250"]
    
 
 # Copyright and License #
